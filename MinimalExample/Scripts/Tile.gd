@@ -12,9 +12,9 @@ func _ready():
 	
 
 func _on_Tile_input_event( ev ):
-	print("_on_Tile_mouse_click")
 	if(ev.type==InputEvent.MOUSE_BUTTON and ev.pressed):
 		if (ev.button_index==BUTTON_LEFT):
+			print("_on_Tile_mouse_click")
 			if(filled):
 				get_node("Sprite").set_texture(Blank)
 				filled = false
