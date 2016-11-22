@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=1]
+
+[ext_resource path="res://Scripts/Tile.gd" type="Script" id=1]
+[ext_resource path="res://assets/Blank Tile.png" type="Texture" id=2]
+[ext_resource path="res://assets/Filled Tile.png" type="Texture" id=3]
+
+[node name="Tile" type="Control"]
+
+focus/ignore_mouse = false
+focus/stop_mouse = true
+size_flags/horizontal = 2
+size_flags/vertical = 2
+margin/left = 80.0
+margin/top = 80.0
+margin/right = 112.0
+margin/bottom = 112.0
+script/script = ExtResource( 1 )
+Blank = ExtResource( 2 )
+Filled = ExtResource( 3 )
+
+[node name="Sprite" type="Sprite" parent="."]
+
+texture = ExtResource( 2 )
+centered = false
+
+[connection signal="input_event" from="." to="." method="_on_Tile_input_event"]
+
+[connection signal="mouse_enter" from="." to="." method="_on_Tile_mouse_enter"]
+
+
